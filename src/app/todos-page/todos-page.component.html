@@ -1,0 +1,8 @@
+<section class="container my-3">
+  <app-add-todo></app-add-todo>
+  <app-todo-link-filter [type]="visibilityFilters.ShowAll">Todos</app-todo-link-filter>
+  <app-todo-link-filter [type]="visibilityFilters.ShowPendents">Pendentes</app-todo-link-filter>
+  <app-todo-link-filter [type]="visibilityFilters.ShowDone">Concluídos</app-todo-link-filter>
+  <app-todos-list-container></app-todos-list-container>
+</section>
+

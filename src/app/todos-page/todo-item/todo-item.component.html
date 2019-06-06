@@ -1,0 +1,11 @@
+<div class="form-check">
+  <input
+    (change)="toogleTodo(todo)"
+    [checked]="todo.completed"
+    class="form-check-input"
+    type="checkbox"
+    id="{{todo.id}}">
+  <label class="form-check-label" for="{{todo.id}}">
+    {{ todo.description }}
+  </label>
+</div>
