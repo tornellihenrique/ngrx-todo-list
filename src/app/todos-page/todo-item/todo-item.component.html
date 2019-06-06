@@ -8,4 +8,7 @@
   <label class="form-check-label" for="{{todo.id}}">
     {{ todo.description }}
   </label>
+  <div class="float-right">
+    <button class="btn btn-warning" (click)="removeTodo(todo)">Delete</button>
+  </div>
 </div>

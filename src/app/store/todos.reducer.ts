@@ -6,17 +6,7 @@ import * as AddTodo from '../todos-page/containers/add-todo/add-todo.actions';
 const initialState: Todo[] = [
   {
     id: uuidv1(),
-    description: 'eu sei que essa tarefa é inútil',
-    completed: false
-  },
-  {
-    id: uuidv1(),
-    description: 'meu teste com pisiti',
-    completed: false
-  },
-  {
-    id: uuidv1(),
-    description: 'bla bla bla bla',
+    description: 'Tarefa exemplo',
     completed: false
   }
 ];
@@ -32,6 +22,11 @@ export const todos = (state = initialState, action) => {
   } else if (action.type === AddTodo.ActionTypes.AddNewTodo) {
     const description = action.payload.description;
     return [{ description, completed: false, id: uuidv1() }, ...state];
+  } else if (action.type === TodosListContainer.ActionTypes.RemoveTodo) {
+    const payload = action.payload;
+    return state.filter(todo => {
+      return (todo !== action.payload.todo);
+    });
   }
   return state;
 };

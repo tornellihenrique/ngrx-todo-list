@@ -9,6 +9,7 @@ import { Todo } from '../models/todo.model';
 export class ListTodosComponent implements OnInit {
   @Input() todos: Todo[];
   @Output() toggleTodo = new EventEmitter<Todo>();
+  @Output() removeTodo = new EventEmitter<Todo>();
 
   constructor() {}
 
@@ -16,5 +17,9 @@ export class ListTodosComponent implements OnInit {
 
   onToggleTodo(todo: Todo) {
     this.toggleTodo.emit(todo);
+  }
+
+  onRemoveTodo(todo: Todo) {
+    this.removeTodo.emit(todo);
   }
 }

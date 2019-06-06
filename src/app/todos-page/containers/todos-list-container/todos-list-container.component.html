@@ -1,1 +1,5 @@
-<app-list-todos [todos]="todos$ | async" (toggleTodo)="onToggleTodo($event)"></app-list-todos>
+<app-list-todos 
+    [todos]="todos$ | async" 
+    (toggleTodo)="onToggleTodo($event)" 
+    (removeTodo)="onRemoveTodo($event)">
+</app-list-todos>
